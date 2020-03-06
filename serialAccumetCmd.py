@@ -22,12 +22,12 @@ print "Correr Registro durante minutos: "
 timeLimit=int(raw_input())*60
 
 # Solicita numero de puerto al que esta conectado el cable
-comPort=raw_input('Numero del puerto COM: ')
+comPort=raw_input('puerto COM o /dev/ttyUSB ')
 
 # Abre puerto e Inicia registro
-print "\nRecibiendo desde el puerto COM%d durante %d minutos\n"%(comPort,timeLimit/60)
+print "\nRecibiendo desde el puerto %s durante %d minutos\n"%(comPort,timeLimit/60)
 
-serialCom = serial.Serial('COM'+comPort, baudrate=9600, timeout=None) #
+serialCom = serial.Serial(comPort, baudrate=9600, timeout=None) #'COM'+comPort
 timeRecord=0
 blockOld=False
    
